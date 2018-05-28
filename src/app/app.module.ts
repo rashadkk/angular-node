@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { appRoutes } from './app.route';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
+
 
 @NgModule({
   declarations: [
