@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="login-wrapper">
+
+        <form class="form-login" (submit)="loginUser(loginForm)" [formGroup]="loginForm">
+            <h2 class="form-login-heading text-center mb-4">Login</h2>
+            <input type="text" class="form-control mb-2" placeholder="Username" formControlName="username" />
+            <input type="password" class="form-control mb-5" placeholder="Password" formControlName="password" />
+            <button class="btn btn-lg btn-tata btn-block mb-2" type="submit">Login</button>
+        </form>
+        <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)" class="alert mt-3 alert-danger" role="alert">
+            Username and Password field can't be empty
+        </div>
+        <div *ngIf="loginError" class="alert mt-3 alert-danger" role="alert">
+            Wrong username or password
+        </div>
+    </div>
+</div>

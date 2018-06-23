@@ -4,10 +4,10 @@ import { HomeComponent } from './home.component';
 
 export const homeRoutes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
+    path: '', component: HomeComponent,
     children: [
-       { path: '', redirectTo: 'home', loadChildren: '' }
+      { path: 'about',  loadChildren: '../about/about.module#AboutModule' },
+      { path: 'profile', loadChildren: '../profile/profile.module#ProfileModule' }
     ]
     
   }
