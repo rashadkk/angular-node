@@ -3,10 +3,11 @@
 // ==================================
 const localDB = {
   host: 'localhost',
-  user: 'root',
-  password: 'bititude',
-  database: '',
-  charset: 'utf8',
+  user: '',
+  password: '',
+  database: 'test',
+  port: '27017',
+  // charset: 'utf8',
 }
 
 const remoteDB = {
@@ -14,14 +15,20 @@ const remoteDB = {
   user: '',
   password: '',
   database: '',
-  charset: 'utf8',
+  port: '27017',
+  // charset: 'utf8',
 }
+
+// module.exports = {
+//   hostname: 'http://localhost:3000',
+//   knex: {
+//     client: 'mysql',
+//     connection: localDB,
+//     debug: true
+//   },
+// }
 
 module.exports = {
   hostname: 'http://localhost:3000',
-  knex: {
-    client: 'mysql',
-    connection: localDB,
-    debug: true
-  },
+  connection: localDB
 }

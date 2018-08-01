@@ -10,6 +10,7 @@ export class AuthService {
 
     login(loginInfo){
         let url = `auth/login`;
-        return this.http.post(url,loginInfo);
+        return this.http.post(url,loginInfo)
+        //   .map((response: Response)=> response.json());
     }
 }

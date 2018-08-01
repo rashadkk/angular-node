@@ -8,18 +8,21 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const app = express();
-
+const expressValidator = require('express-validator');
+const auth = require('./auth/auth.service')();
 const config = require('./config/environment');
 const env = app.get('env');
-
+const mongooseConf = require('./config/mongoose');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(auth.initialize());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(expressValidator());
+app.use(cookieParser(config.secretOrKey));
 app.use(express.static(path.join(__dirname, 'public')));
 
 if ('production' === env) {

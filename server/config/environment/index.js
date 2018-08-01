@@ -20,6 +20,9 @@ var all = {
 
   // Server port
   port: process.env.PORT || 8000,
+
+  // JWT Secret
+  secretOrKey: 'secretKey',
  
 };
 
